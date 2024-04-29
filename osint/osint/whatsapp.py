@@ -21,7 +21,7 @@ async def cwablk():
 
     json_data_strings = json.loads(txt_data_strings)
 
-    numbers = [str(string["phone"]) for string in json_data_strings] ## 10 шт, которые залетают
+    numbers = [str(string["phone"]) for string in json_data_strings] ## 100 шт, которые залетают
 
     async with aiohttp.ClientSession() as session:
         for number in numbers:
