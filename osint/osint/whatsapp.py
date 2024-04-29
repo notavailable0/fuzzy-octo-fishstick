@@ -23,7 +23,9 @@ async def cwablk():
 
     numbers = [str(string["phone"]) for string in json_data_strings] ## 100 шт, которые залетают
 
-    async with aiohttp.ClientSession() as session:
+    connector = aiohttp.TCPConnector(limit=3)
+
+    async with aiohttp.ClientSession(connector=connector) as session:
         for number in numbers:
 
             payload = json.dumps({
