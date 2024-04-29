@@ -7,6 +7,9 @@ import aiohttp
 url = 'https://w2.checkwa.com/check/'
 
 ## TODO SENTRY
+## todo timeout fix, test limits of checkwa
+## todo sqlalchemy
+## tood different responses diff usage
 
 async def cwablk():
     tasks_list = []
@@ -38,6 +41,9 @@ async def cwablk():
         responses = await asyncio.gather(*tasks_list)
         for response in responses:
             results.append(await response.json())
+
+    ## filter responses for timed out etc 
+    ## log the fuck out of this code
 
     return results
 
