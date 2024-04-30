@@ -1,0 +1,5 @@
+aiohttp==3.9.5
+gdown==5.1.0
+opentele==1.15.1
+Requests==2.31.0
+Telethon==1.35.0
